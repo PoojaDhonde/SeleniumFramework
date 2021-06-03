@@ -89,6 +89,9 @@ public class MainDemo{
 //		return data;
 //	}
 	
+	
+	
+	
 	@DataProvider(name = "Book1")
 	public static Object Book1() {
 
@@ -116,7 +119,7 @@ public class MainDemo{
 		return(data);
 	}
 	
-	@Test(dependsOnMethods = {"login"}, dataProvider = "Book1")
+	@Test(enabled = false, dependsOnMethods = {"login"}, dataProvider = "Book1")
 	public void addEmployee(String firstName, String middleName, String lastName, String username, String password, String confirmPassword, String gender, String martialStatus, String nationality, String dob) {
 
 		try {
@@ -169,7 +172,7 @@ public class MainDemo{
 //		}
 //	}
 	
-	@Test(dependsOnMethods = {"login", "addEmployee"})
+	@Test(enabled = false, dependsOnMethods = {"login", "addEmployee"})
 	@Parameters({"nameToType","nameToClick","nameToSearch"})
 	public void searchEmployee(@Optional("Alice") String nameToType,  @Optional("Alice") String nameToClick,  @Optional("Alice")String nameToSearch) {
 
@@ -187,19 +190,27 @@ public class MainDemo{
 			e.printStackTrace();
 		}
 	}
-
-	@Test(dependsOnMethods = {"login","searchEmployee"})
-	public void logout() {
-
-		try {
-
-			LoginLogoutTest.welcomeButton(chrome).click();
-			LoginLogoutTest.logoutButton(chrome).click();
-
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+	
+	@Test()
+	@Parameters({"nameToSearch"})
+	public void clickEmpCheckbox(@Optional("Pooja") String nameToSearch) {
+		
+		EmployeeSearch.clickPIMEmployeeList(chrome);
+		EmployeeSearch.clickCheckbox(chrome, nameToSearch);
 	}
+
+//	@Test(dependsOnMethods = {"login", "clickEmpCheckbox"})
+//	public void logout() {
+//
+//		try {
+//
+//			LoginLogoutTest.welcomeButton(chrome).click();
+//			LoginLogoutTest.logoutButton(chrome).click();
+//
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	@AfterTest
 	public void close() {

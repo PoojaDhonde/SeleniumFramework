@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="Test(failed)">
+    <classes>
+      <class name="com.qa.OrangeHRM.Test.AddEmployeePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="verifyAddEmployeeTest"/>
+          <include name="tearDown"/>
+          <include name="verifyAddEmployeeWithLoginCredTest" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- com.qa.OrangeHRM.Test.AddEmployeePageTest -->
+      <class name="com.qa.OrangeHRM.Test.HomePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="verifyClickOnEmployeeListTest"/>
+          <include name="verifyClickOnReportsTest"/>
+        </methods>
+      </class> <!-- com.qa.OrangeHRM.Test.HomePageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -25,7 +25,7 @@ public class EmployeeSearch {
 			action = new Actions(driver);
 			action.moveToElement(HoverPIMMenuSubMenu.hoverPIM(driver)).perform();
 			action.moveToElement(HoverPIMMenuSubMenu.hoverEmployeeList(driver)).click().perform();
-			
+
 		}catch(Exception e) {
 			//e.printStackTrace();
 			e.getCause();
@@ -85,7 +85,7 @@ public class EmployeeSearch {
 		try {
 
 			element = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(driver.findElement(By.id("searchBtn"))));
-			}catch(Exception e) {
+		}catch(Exception e) {
 			//e.printStackTrace();
 			e.getCause();
 			e.getClass();
@@ -100,15 +100,36 @@ public class EmployeeSearch {
 
 		try {
 			element =  new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[contains(text(),'"+nameToSearch+"')]"))));
-			}catch (Exception e) {
+		}catch (Exception e) {
 			//e.printStackTrace();
 			e.getCause();
 			e.getClass();
 			e.getMessage();
 		}
 		return element;
+	}
+
+	//*[@id="resultTable"]/tbody/tr[2]/td[3]/a/preceding::td/input[@value=3]
+
+	//*[@id="resultTable"]/tbody/tr[1]
+	public static void clickCheckbox(WebDriver driver, String nameToSearch) {
+		String name;
+		String beforexpath;
+		String afterxpath;
+
+		String path ="//*[@id='resultTable']/tbody/tr";
+		List <WebElement> count = driver.findElements(By.xpath(path));
+
+		beforexpath = "//*[@id='resultTable']/tbody/tr[2]/td[";
+		afterxpath = "]/a/preceding::td/input[@value=";
+
+		for(int i = 1; i<=count.size(); i++) {
+			name = driver.findElement(By.xpath(beforexpath+i+afterxpath+i+"]")).getText();
+			if (name.equals(nameToSearch))
+				driver.findElement(By.xpath(beforexpath+i+afterxpath+i+"]")).click();
+		}
+
 
 
 	}
-
 }

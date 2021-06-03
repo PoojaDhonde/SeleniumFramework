@@ -1,0 +1,6 @@
+testScripts\TestBase.class
+objectRepository\LoginPage.class
+objectRepository\PimAddEmployee.class
+objectRepository\PimHoverMenu.class
+objectRepository\HomePage.class
+testScripts\LogoutTest.class

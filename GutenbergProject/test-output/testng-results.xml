@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-05-20T22:23:48 IST" name="Default suite" finished-at="2021-05-20T22:23:53 IST" duration-ms="5472">
+    <groups>
+    </groups>
+    <test started-at="2021-05-20T22:23:48 IST" name="Default test" finished-at="2021-05-20T22:23:53 IST" duration-ms="5472">
+      <class name="gutenberg.Test.FictionPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:gutenberg.Test.FictionPageTest@2cd2a21f]" started-at="2021-05-20T22:23:48 IST" name="setup" finished-at="2021-05-20T22:23:51 IST" duration-ms="3152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyClickOnFictionCategory()[pri:1, instance:gutenberg.Test.FictionPageTest@2cd2a21f]" started-at="2021-05-20T22:23:51 IST" name="verifyClickOnFictionCategory" finished-at="2021-05-20T22:23:53 IST" duration-ms="1625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyClickOnFictionCategory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:gutenberg.Test.FictionPageTest@2cd2a21f]" started-at="2021-05-20T22:23:53 IST" name="tearDown" finished-at="2021-05-20T22:23:53 IST" duration-ms="671" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- gutenberg.Test.FictionPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

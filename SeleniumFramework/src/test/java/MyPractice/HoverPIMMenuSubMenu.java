@@ -12,7 +12,7 @@ public class HoverPIMMenuSubMenu {
 
 		try {
 
-			element = driver.findElement(By.xpath("//*[@id=\"menu_pim_viewPimModule\"]"));
+			element = driver.findElement(By.xpath("//*[@id='menu_pim_viewPimModule']"));
 
 		}catch(Exception e) {
 			e.printStackTrace();
